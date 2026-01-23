@@ -1,45 +1,58 @@
-# 🎙️ Meu Flow: Assistente de Acessibilidade Web
+# 🎙️ Meu Flow: Hands-Free Voice Command Engine
+*(A Native Web Speech API Implementation for Accessibility)*
 
-> Uma interface de comando de voz desenvolvida para permitir a navegação hands-free utilizando a Web Speech API.
+![JavaScript](https://img.shields.io/badge/Core-Vanilla_JS_(ES6)-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Web API](https://img.shields.io/badge/API-Web_Speech_Recognition-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)
+![Accessibility](https://img.shields.io/badge/Focus-A11y_&_HCI-success?style=for-the-badge&logo=accessibility&logoColor=white)
 
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=for-the-badge&logo=javascript&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Funcional-success?style=for-the-badge)
+> **"When physical input fails, voice takes over."**
+> A lightweight voice-control interface developed to bridge the gap between intent and action without keyboard/mouse dependency.
 
-## 🎯 O Problema
-Durante um período de lesão temporária nos braços, o uso convencional de teclado e mouse tornou-se inviável. Eu precisava de uma maneira de interagir com a web e manter a produtividade sem depender de input físico manual.
+---
 
-## 💡 A Solução
-Desenvolvi uma aplicação web leve que utiliza a **Web Speech API** nativa do navegador. O sistema captura o áudio do microfone, transcreve em tempo real e mapeia palavras-chave para executar ações no DOM (como rolar a página, mudar temas ou exibir alertas), eliminando a necessidade de digitação para tarefas básicas.
+## 🎯 The "Broken Arm" Challenge
+This project was born out of necessity, not just curiosity.
+During a period of temporary physical disability (arm injury), standard input methods (keyboard/mouse) became impossible. I needed a way to maintain digital productivity and navigate the web **hands-free**.
 
-## ⚙️ Funcionalidades
-- **Reconhecimento de Voz em Tempo Real:** Captura e processamento imediato de comandos.
-- **Controle de Interface:** Comandos para rolar a página (Scroll Up/Down).
-- **Modo Escuro por Voz:** Comando "Ativar modo escuro" altera o CSS dinamicamente.
-- **Feedback Visual:** O sistema exibe na tela o que entendeu que você disse, para confirmar a ação.
+Instead of downloading heavy proprietary software, I engineered a lightweight, browser-native solution to map natural language to DOM actions.
 
-## 🚀 Como Rodar
-Este é um projeto estático, ou seja, não precisa de instalação de bibliotecas (npm/pip). Ele roda direto no navegador.
+## 💡 The Architecture
+The application leverages the browser's native **Web Speech API (`webkitSpeechRecognition`)** to process audio input directly on the client side.
+It bypasses the need for external NLP servers, reducing latency and ensuring immediate feedback for navigation commands.
 
-**⚠️ Requisito:** Utilize o **Google Chrome** ou Edge (navegadores baseados em Chromium) para suporte total à API `webkitSpeechRecognition`.
+---
 
-1. Clone este repositório:
-```bash
-git clone https://github.com/cristalwolfff/meu_flow.git
-```
-2. Entre na pasta:
-```bash
-cd meu_flow
-```
-2. Abra o arquivo index.html:
-- Dê um duplo clique no arquivo index.html.
-- Ou clique com botão direito -> Abrir com -> Google Chrome.
+## ⚙️ Key Features
+* **Real-Time Phonetic Mapping:** Instant transcription of voice commands to text.
+* **Voice-Driven DOM Manipulation:**
+    * *"Scroll Down"* / *"Scroll Up"* triggers smooth scrolling events.
+    * *"Dark Mode"* dynamically toggles CSS classes for visual comfort.
+* **Visual Feedback Loop:** Displays exactly what the engine "heard" on screen, providing immediate confirmation to the user (crucial for accessibility tools).
 
-3. Permita o uso do Microfone quando o navegador solicitar.
+---
 
-## 🛠️ Tecnologias Utilizadas
-- JavaScript (ES6): Lógica de controle, manipulação do DOM e Switch Case para comandos.
-- Web Speech API: Interface nativa do navegador para reconhecimento de fala (Speech-to-Text).
-- HTML5/CSS3: Estrutura e estilização da interface.
+## 🚀 How to Run (No Installation Required)
+This is a **static, dependency-free** project. It runs directly in the browser.
 
-## Desenvolvido por Cristalwolf Dias 🐺
+**⚠️ System Requirement:** Please use **Google Chrome** or **Microsoft Edge** (Chromium-based browsers) as they have full support for the `webkitSpeechRecognition` API.
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/cristalwolfff/meu_flow.git](https://github.com/cristalwolfff/meu_flow.git)
+    ```
+2.  **Open the Application:**
+    * Navigate to the folder.
+    * Double-click `index.html`.
+3.  **Grant Permissions:**
+    * Click "Allow" when the browser requests microphone access.
+    * *Start speaking commands like "Rolar para baixo" (Scroll down).*
+
+---
+
+## 🛠️ Tech Stack
+* **JavaScript (ES6+):** Logic for command parsing (Switch Case) and Event Listeners.
+* **Web Speech API:** Native browser interface for Speech-to-Text conversion.
+* **HTML5/CSS3:** Semantic structure and responsive UI.
+
+---
+*Developed by [Cristalwolf](https://github.com/cristalwolfff) // AI & Accessibility Engineer*
